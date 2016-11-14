@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.idea/
+gulp-build.iml
+node_modules
+release/*
+public/*
+build/*
+npm-debug.log
