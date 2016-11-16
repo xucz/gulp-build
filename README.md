@@ -6,8 +6,7 @@
 * html：md5替换，内容压缩；
 * scope.js：一个极其简单的小型前端mvc
 * parse.js：一个极其简单的小型前端模板
-> ## 安装
-> 
+## 安装 
 > 1. `npm install`
 > 2. `npm run dev`
 > 3. 访问<http://localhost:3000>
