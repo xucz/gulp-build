@@ -3,4 +3,6 @@
 * js：代码压缩，合并，检查，md5；
 * css：代码压缩，autoprefix，md5；
 * 图片：压缩，md5；
-* html：md5替换，内容压缩。
+* html：md5替换，内容压缩；
+* scope.js：一个极其简单的小型前端mvc
+* parse.js：一个极其简单的小型前端模板
