@@ -3,7 +3,8 @@
 .idea/
 gulp-build.iml
 node_modules
-release/*
-public/*
-build/*
+release
+public
+build
+rev
 npm-debug.log
