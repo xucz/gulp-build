@@ -101,7 +101,6 @@ gulp.task('build:html', function () {
         .pipe(gulp.dest(paths.dest.html));
 });
 gulp.task('rev', function() {
-    console.log([paths.revs, './'+buildPath+'/**/*.html','./'+buildPath+'/**/*.css','./'+buildPath+'/**/*.js'])
     return gulp.src([paths.revs, './'+buildPath+'/**/*.html','./'+buildPath+'/**/*.css','./'+buildPath+'/**/*.js'])
         .pipe(revCollector({
             replaceReved: true
