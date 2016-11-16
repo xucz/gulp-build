@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     htmlmin = require('gulp-htmlmin'),
     autoprefixer = require('gulp-autoprefixer'),
     clean = require('gulp-clean'),
+    exec = require('child_process').exec,
     config = require('./config/config'),
     devPath = 'public',
     paths = {
@@ -62,8 +63,22 @@ gulp.task('watch:all', function () {
     gulp.watch(paths.src.js, ['build:js']);
     gulp.watch(paths.src.html, ['build:html']);
 });
+gulp.task('run:serve', function () {
+    return new Promise(function (resolve, reject) {
+        var cmd = exec('npm run serve', {maxBuffer: 50000 * 1024}, function (err, stdout) {
+            if(err) {
+                reject(err);
+            } else {
+                resolve(stdout);
+            }
+        });
+        cmd.stdout.pipe(process.stdout);
+        cmd.stderr.pipe(process.stderr);
+    });
+
+});
 function build () {
-    gulp.run(gulpsync.sync(['dev:clean', ['build:html','build:js', 'build:css','build:img','build:lib'], 'watch:all']));
+    gulp.run(gulpsync.sync(['dev:clean', ['build:html','build:js', 'build:css','build:img','build:lib'], 'watch:all', 'run:serve']));
 }
 
 module.exports = build;
